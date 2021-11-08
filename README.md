@@ -1,5 +1,7 @@
 # Django Full Course
 
+https://www.youtube.com/watch?v=PtQiiknWUcI&t=4994s
+
 ## MVT Design Pattern
 
 django follows a MVT design pattern
