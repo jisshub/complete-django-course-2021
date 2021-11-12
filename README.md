@@ -1,14 +1,12 @@
 # Django Full Course
 
-https://www.youtube.com/watch?v=PtQiiknWUcI&t=4994s
+<https://www.youtube.com/watch?v=PtQiiknWUcI&t=4994s>
 
-[MVT Design Pattern](#MVT Design Pattern)
+[MVT Design Pattern](#MVT-Design-Pattern)
 
-[Creating Django App](#Creating Django App)
+[Creating Django App](#Creating-Django-App)
 
-[Install, Activate Virtual Environment](#Install, Activate Virtual Environment)
-
-
+[Install, Activate Virtual Environment](#Install-Activate-Virtual-Environment)
 
 # MVT Design Pattern
 
@@ -43,7 +41,7 @@ $ source Scripts/activate
 
 > **wsgi.py**. The WSGI application for your Django project.
 
-> \***\*init**.py**. The **init\*\*.py file for your project.
+> \***\*init**.py**. The**init\*\*.py file for your project.
 
 > \***\*pycache\*\***. The **pycache** directory for your project.
 
@@ -124,7 +122,7 @@ urlpatterns = [
 
 ```
 
-- Then navigate to browser and enter url: http://127.0.0.8000/index/
+- Then navigate to browser and enter url: <http://127.0.0.8000/index/>
 
 ## Creating Templates
 
@@ -244,7 +242,7 @@ def room(request, pk):
 ```
 
 - So by clicking on room it will redirect to room detail page.
-- Url on browser is http://127.0.0.8000/room/1.
+- Url on browser is <http://127.0.0.8000/room/1>.
 
 ## Updating Details Page
 
@@ -347,7 +345,7 @@ python manage.py createsuperuser
 ```
 
 - Now we created a user.
-- Next login to admin panel, http://127.0.0.8000/admin/
+- Next login to admin panel, <http://127.0.0.8000/admin/>
 - To view our model there, register our model with admin panel in admin.py.
 
 **admin.py**
