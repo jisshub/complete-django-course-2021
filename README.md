@@ -4,13 +4,13 @@ https://www.youtube.com/watch?v=PtQiiknWUcI&t=4994s
 
 [MVT Design Pattern](#MVT Design Pattern)
 
-[Creating django App](##Creating django App)
+[Creating Django App](#Creating Django App)
 
-[Install, Activate Virtual Environment](##Install, Activate Virtual Environment)
+[Install, Activate Virtual Environment](#Install, Activate Virtual Environment)
 
 
 
-## MVT Design Pattern
+# MVT Design Pattern
 
 django follows a MVT design pattern
 
@@ -22,7 +22,7 @@ django follows a MVT design pattern
 
 - view - when user enter a url, request goes to view and view returns response in form of templates or get data from models.
 
-## Install, Activate Virtual Environment
+# Install, Activate Virtual Environment
 
 ```bash
 pip install virtualenv
@@ -49,7 +49,7 @@ $ source Scripts/activate
 
 > When we create new app, it is added to INSTALLED_APPS list in settings.py.
 
-## Creating django App
+# Creating Django App
 
 - navigate to project directory.
 
