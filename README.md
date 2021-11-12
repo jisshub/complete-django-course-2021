@@ -26,7 +26,7 @@
 
 [Setting Up Dynamic Urls](#Setting-Up-Dynamic-Urls)
 
-[Database and Admin Panel](#Database-and-Admin Panel)
+[Database and Admin Panel](#Database-and-Admin-Panel)
 
 [Generating Admin Users](#Generating-Admin-Users)
 
