@@ -2,6 +2,14 @@
 
 https://www.youtube.com/watch?v=PtQiiknWUcI&t=4994s
 
+[MVT Design Pattern](#MVT Design Pattern)
+
+[Creating django App](##Creating django App)
+
+[Install, Activate Virtual Environment](##Install, Activate Virtual Environment)
+
+
+
 ## MVT Design Pattern
 
 django follows a MVT design pattern
@@ -14,9 +22,11 @@ django follows a MVT design pattern
 
 - view - when user enter a url, request goes to view and view returns response in form of templates or get data from models.
 
-time: 23:00
+## Install, Activate Virtual Environment
 
-**Activate virtual env**
+```bash
+pip install virtualenv
+```
 
 ```bash
 Home@DESKTOP-NBDEUNF MINGW64 /f/complete-django-course/django-course-env
