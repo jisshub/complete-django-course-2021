@@ -38,6 +38,22 @@
 
 [Create Model User](#Create-Model-User)
 
+[Create Model Topic](#Create-Model-Topic)
+
+[Run Migrations](#Run-Migrations)
+
+[Register our models with admin panel](#Register-our-models-with-admin-panel)
+
+[Render data on to template](#Render-Data-on-to-Template)
+
+[CRUD OPERATIONS](#CRUD-OPERATIONS)
+
+[Creating A Room](#Creating-A-Room)
+
+[Updating A Room](#Updating-A-Room)
+
+[Delete A Room](#Delete-A-Room)
+
 # MVT Design Pattern
 
 django follows a MVT design pattern
@@ -527,7 +543,7 @@ class Room(models.Model):
 - Now we have a **Topic-Room** relationship.
 - Also we have a **User-Room** relationship.
 
-## Run Migrations
+# Run Migrations
 
 - Everytime we make changes to models run migrations.
 
@@ -629,7 +645,7 @@ class RoomForm(ModelForm):
         fields = '__all__'
 ```
 
-# Creating a Room
+# Creating A Room
 
 - Create a RoonmForm class that inherits ModelForm
 - We have to set Meta class to RoomForm class.
@@ -696,7 +712,7 @@ class Meta:
 
 - Now latest updated item will seen at top
 
-# Updating a Room
+# Updating A Room
 
 **1.** Create a view
 
@@ -739,7 +755,7 @@ def UpdateRoom(request, pk):
 
 - provide the room id in url
 
-# Delete a Room
+# Delete A Room
 
 **1.** First create a template called delete.html
 
