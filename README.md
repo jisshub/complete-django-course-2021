@@ -1,6 +1,6 @@
 # Django Full Course
 
-<https://www.youtube.com/watch?v=PtQiiknWUcI&t=4994s>
+[Complete Django Course - 2021](https://www.youtube.com/watch?v=PtQiiknWUcI&t=4994s)
 
 [MVT Design Pattern](#MVT-Design-Pattern)
 
