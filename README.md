@@ -26,9 +26,9 @@
 
 [Setting Up Dynamic Urls](#Setting-Up-Dynamic-Urls)
 
-[Database and Admin Panel](#Database and Admin Panel)
+[Database and Admin Panel](#Database-and-Admin Panel)
 
-[Generating Admin Users](#Generating Admin Users)
+[Generating Admin Users](#Generating-Admin-Users)
 
 [Getting Rooms from database to our template](#Getting-Rooms-from-database-to-our-template)
 
