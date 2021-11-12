@@ -8,6 +8,36 @@
 
 [Install, Activate Virtual Environment](#Install-Activate-Virtual-Environment)
 
+[Run Server](#Run-Server)
+
+[Creating Django App](#Creating-Django-App)
+
+[Creating Views](#Creating-Views)
+
+[Creating Templates](#Creating-Templates)
+
+[Template Inheritance](#Template-Inheritance)
+
+[Passing Data to Templates](#Passing-Data-to-Templates)
+
+[Dynamic URL Routing](#Dynamic-URL-Routing)
+
+[Updating Details Page](#Updating-Details-Page)
+
+[Setting Up Dynamic Urls](#Setting-Up-Dynamic-Urls)
+
+[Database and Admin Panel](#Database and Admin Panel)
+
+[Generating Admin Users](#Generating Admin Users)
+
+[Getting Rooms from database to our template](#Getting-Rooms-from-database-to-our-template)
+
+[Model Manager](#Model-Manager)
+
+[Create Model Message](#Create-Model-Message)
+
+[Create Model User](#Create-Model-User)
+
 # MVT Design Pattern
 
 django follows a MVT design pattern
@@ -85,7 +115,7 @@ INSTALLED_APPS = [
 
 > **views.py**: The views.py file for your project. All views are defined here.
 
-## Creating Views
+# Creating Views
 
 **views.py**
 
@@ -130,7 +160,7 @@ urlpatterns = [
 
 - Then navigate to browser and enter url: <http://127.0.0.8000/index/>
 
-## Creating Templates
+# Creating Templates
 
 - Create a templates directory in project root directory. Here root it studybud-main folder.
 - Create html files in templates directory.
@@ -154,7 +184,7 @@ def room(request):
     return render(request, 'rooms.html')
 ```
 
-## Template Inheritance
+# Template Inheritance
 
 - Suppose we want to show a navbar in every page of our app.
 - We can create a main template and include the navbar template there.
@@ -184,7 +214,7 @@ def room(request):
   {% endblock %}
   ```
 
-## Passing Data to Templates
+# Passing Data to Templates
 
 - Create a dictionary of rooms in views.py.
 - Pass it to context dictionary in function that we want to pass.
@@ -221,7 +251,7 @@ def room(request):
     return render(request, 'base/rooms.html')
 ```
 
-## Dynamic URL Routing
+# Dynamic URL Routing
 
 - When we click on each room it should redirect to room detail page.
 - We can use dynamic url routing.
@@ -250,7 +280,7 @@ def room(request, pk):
 - So by clicking on room it will redirect to room detail page.
 - Url on browser is <http://127.0.0.8000/room/1>.
 
-## Updating Details Page
+# Updating Details Page
 
 - Update room function in views.py.
 
@@ -284,7 +314,7 @@ def room(request, pk):
 
 - So on clicking on room name it will redirect to room detail page.
 
-## Setting Up Dynamic Urls
+# Setting Up Dynamic Urls
 
 - Use built in url tag to replace static url.
 - Pass url name in quotes, pass parameters like id to the url tag.
@@ -293,7 +323,7 @@ def room(request, pk):
 <a href="{% url 'room' room.id %}">{{ room.name }}</a>
 ```
 
-## Database and Admin Panel
+# Database and Admin Panel
 
 - Run below command in terminal to create database.
 
@@ -344,7 +374,7 @@ python manage.py migrate
 
 - Now we can see the table Room in database.
 
-### Generating Admin Users
+# Generating Admin Users
 
 ```bash
 python manage.py createsuperuser
@@ -365,7 +395,7 @@ admin.site.register(Room)
 - Now refresh site we can view our model there.
 - Add Rooms to our admin panel.
 
-### Getting Rooms from database to our template
+# Getting Rooms from database to our template
 
 ```py
 from .models import Room
@@ -384,7 +414,7 @@ def home(request):
 - Render the rooms in home.html file.
 - Now we can see rooms created in database on our home page.
 
-## Model manager
+# Model manager
 
 ![](./images/image-3.jpg)
 
