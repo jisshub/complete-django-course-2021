@@ -802,4 +802,98 @@ def DeleteRoom(request, pk):
 
 # Search Functionality
 
-Time : **2:06:00**
+**1. Add some styling for the template**
+
+```html
+<style>
+  .home-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
+</style>
+
+<div class="home-container">
+  <div>
+    <h3>Browse Topic</h3>
+    <hr />
+  </div>
+
+  <div>
+    {% for room in rooms %}
+    <div>
+      <a href="{% url 'update-room' room.id %}">Update Room</a>
+      <a href="{% url 'delete-room' room.id %}">Delete Room</a>
+      <span>@{{room.host.username}}</span>
+      <h5>
+        {{ room.id }} - <a href="{% url 'room' room.id %}">{{room.name}}</a>
+      </h5>
+      <small>{{room.topic.name}}</small>
+      <hr />
+    </div>
+    {% endfor %}
+  </div>
+</div>
+```
+
+**2. Next we need to list out all the topic under Browse Topic column.**
+
+```py
+def home(request):
+    rooms = Room.objects.all()
+    topics = Topic.objects.all()
+    context = {
+        'rooms': rooms,
+        'topics': topics
+    }
+    return render(request, 'base/home.html', context)
+```
+
+- Get all topics using **objects.all()**.
+- Pass topics to context dictionary.
+
+**3. Next Loop thru the topic and render topic in home page under Browse Topic section**
+
+```html
+{% for topic in topics %}
+<div>
+  <a href="{% url 'home' %}?q={{topic.name}}">{{ topic.name }}</a>
+</div>
+{% endfor %}
+```
+
+- When we click on a topic, url goes to home page, and add query string to url.
+- query string is the topic name.
+
+# Filter Method
+
+```py
+def home(request):
+    q = request.GET.get('q') if request.GET.get('q') != None else ''
+    rooms = Room.objects.filter(topic__name__icontains=q)
+    topics = Topic.objects.all()
+    context = {
+        'rooms': rooms,
+        'topics': topics
+    }
+    return render(request, 'base/home.html', context)
+```
+
+- If there is a query string present, pass the same to q. Else pass None. For that, we use inline if-else statement.
+
+- Now filter the rooms based on topic name.
+
+- topic\*\*name is the name field of Topic model. Here we use it since we are filter topic name
+  from the Room model. From Room model, first get topic and we go upwards to Topic model
+  to get name field. That is why we use \_\_ (double underscore) between topic name.
+
+- topic**name**icontains - icontains is the case insensitive search for topic name.
+  Ie. to get **python** data, if i write py or PYTHON or python,
+  the data is returned. It is case insensitive.
+
+- Sample result looks like below:
+
+![](./images/image-5.jpg)
+
+# Adding Search Bar
+
+time: 2:15:30
