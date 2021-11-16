@@ -896,4 +896,64 @@ def home(request):
 
 # Adding Search Bar
 
-time: 2:15:30
+- Adding search bar to search for rooms.
+
+```html
+<form action="{% url 'home' %}" method="get">
+  <input type="text" name="q" placeholder="Search Rooms" />
+</form>
+```
+
+- Create a form with get method. and url set to home url.
+
+- We need to get the data, and should redirect always to home page as well.
+
+- Add input field with type text and name q. this q will be used to search for rooms.
+
+- If specified anything else instead of q, then no result.
+
+# Dynamic Search
+
+- Till now we are searching only for rooms from search bar.
+
+- Dynamic Search, we can search for topic, user, and room name from search bar.
+
+```py
+from django.db.models import Q
+rooms = Room.objects.filter(
+                            Q(topic__name__icontains=q) |
+                            Q(name__icontains=q) |
+                            Q(description__icontains=q) |
+                            Q(host__username__icontains=q)
+                            )
+```
+
+- Import Q from django.db.models.
+- Q object enables user to search with different values.
+- We club each Q object with OR operator.
+- We can club Q object with AND operator.
+- In Q object, we specify the field name and value to search.
+- Here we search for room, htopic, description, and host name all at once.
+- For more about Q:
+  https://books.agiliq.com/projects/django-orm-cookbook/en/latest/query_relatedtool.html
+
+# Count the Rooms
+
+```py
+room_count = rooms.count()
+```
+
+- Get rooms count by **count()**.
+- Pass the same to context dictionary as key:value pair
+
+```html
+<h5>{{room_count}} Rooms Available</h5>
+```
+
+- Render the **room_count** variable in template.
+
+![](./images/image-6.jpg)
+
+time: 2:22:30
+
+# User Login
